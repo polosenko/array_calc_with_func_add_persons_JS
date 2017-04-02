@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+
+        var a = +(prompt("Введите первое число", ""));
+        var operator = prompt("Введите математическую операцию", "");
+        var b = +(prompt("Введите второе число", "")    );
+        if(!parseInt(a) ||!parseInt(b)){
+            alert ("Введите число!");
+        }
+        var result;
+
+
+        function add (a, b) {
+            return a + b;
+        };
+        function sub (a, b) {
+            return a - b;
+        };
+        function mult (a, b) {
+            return a * b;
+        };
+        function div (a, b) {
+              if (b != 0) {
+                  return a / b;
+              }
+              else {
+                  alert("На ноль делить нельзя!!!");
+              }
+        };
+        function exp(a,b) {
+            return Math.pow(a,b);
+            
+        };
+
+        switch (operator){
+            case '+': result = add(a,b);break;
+            case '-': result = sub(a,b);break;
+            case '*': result = mult(a,b);break;
+            case '/': result = div(a,b);break;
+            default: alert("Введите число");
+
+            }
+        alert(result);
+    </script>
+
+</body>
+</html>
