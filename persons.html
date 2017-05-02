@@ -2,11 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>persons</title>
+    <title>Persons</title>
+    <link rel = "stylesheet" href="style.css">
 </head>
-<body>
-    <script>
+<body onload="load()">
+<div id = "table"></div>
+<script>
+/*В аттаче код, который надо дописать так чтобы у пользоателя цыклически спрашивалось хочет ли он ввесте еще пользователей.
+И пользователя сохранялись в масив объектов.
+Если пользователь выбирает ввести нового, то в  вызывается фукнция заполнения
+Если позьзователь выбирает посмотреть таблицу, то весь масив генерится в таблицу*/
 
-    </script>
+    var persons = [
+    {   name: 'Donald',
+        sname: 'Tramp',
+        age: '70'
+    },
+    {   name: 'Obama',
+        sname: 'Barack',
+        age: '55'
+    }
+    ];
+    var person = {
+            name: '',
+            sname: '',
+            age: ''
+    };
+    function ask() {
+        person.name = prompt("Введите свое имя:");
+        person.sname = prompt("Введите свою фамилию:");
+        person.age = prompt("Введите свой возраст:");
+        persons.push(person);
+    }
+//    function say() {
+//        document.write("Имя: " + person.name + "<br />");
+//        document.write("Фамилия: " + person.sname + "<br />");
+//        document.write("Возраст: " + person.age + "<br />");
+//        document.write("<hr/>");
+//    };
+
+        function load() { //генерация табл
+            var tableContainer = document.getElementById('table'); //address div
+            var table = document.createElement('table'); // create-создать tag <table>
+            tableContainer.appendChild(table); // append in container
+
+
+            for(var i = 0; i < persons.length; i++) {
+                var row = document.createElement('tr');
+                table.appendChild(row);
+
+                for (item in persons[i]){
+                    var td = document.createElement('td');
+                    row.appendChild(td);
+                    td.innerHTML = persons[i][item];
+                }
+            }
+
+       };
+                var answer = true;
+                for (;;) {
+                    answer = confirm("Вы хотите добавить пользователя в таблицу?");
+                    if (answer) {
+                        ask();
+                    }
+                    else {break;}
+                }
+                var answer2 = confirm("Вы хотите посмотреть таблицу с пользователями?");
+                if (answer2) {
+                    createTable();
+                }
+
+</script>
+
 </body>
 </html>
