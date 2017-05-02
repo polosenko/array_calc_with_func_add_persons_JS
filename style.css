@@ -1,7 +1,6 @@
 table {
     text-align: center;
     border: 1px solid black;
-
 }
 
 td {
@@ -10,4 +9,4 @@ td {
 
 tr {
     border: 1px solid black;
-};
+}
