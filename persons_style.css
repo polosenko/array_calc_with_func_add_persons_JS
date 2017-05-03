@@ -1,0 +1,17 @@
+table {
+    padding: 10px;
+    border: 1px solid #d6e9c6;
+    border-radius: 2px;
+    color: #3c763d;
+    background-color: #dff0d8;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+tr {
+    border: 1px solid black;
+    padding: 10px;
+}
